@@ -1,6 +1,7 @@
 (in-package :llvm)
 
 (defcfun* "LLVMTypeOf" type (val value))
+(defcfun (global-value-type "LLVMGlobalGetValueType") type (global value))
 (defcfun (value-name "LLVMGetValueName") :string (val value))
 (defcfun* "LLVMSetValueName" :void (val value) (name :string))
 (defun (setf value-name) (name val)

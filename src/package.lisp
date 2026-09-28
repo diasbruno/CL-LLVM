@@ -175,6 +175,7 @@
            #:initialize-native-target
            #:target-data
            #:add-target-data
+           #:set-module-data-layout
            #:string-representation
            #:byte-order
            #:pointer-size
