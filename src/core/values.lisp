@@ -338,6 +338,12 @@
   (set-tail-call call-inst is-tail-call)
   is-tail-call)
 
+(defcfun (tail-call-kind "LLVMGetTailCallKind") tail-call-kind (call value))
+(defcfun* "LLVMSetTailCallKind" :void (call value) (kind tail-call-kind))
+(defun (setf tail-call-kind) (kind call)
+  (set-tail-call-kind call kind)
+  kind)
+
 (defcfun (%add-incoming "LLVMAddIncoming") :void
   (phi-node value)
   (incoming-values (carray value)) (incoming-blocks (carray basic-block))

@@ -131,6 +131,12 @@
        ((:x86-stdcall "LLVMX86StdcallCallConv"))
        ((:x86-fastcall "LLVMX86FastcallCallConv")))
 
+(cenum tail-call-kind
+       ((:none "LLVMTailCallKindNone"))
+       ((:tail "LLVMTailCallKindTail"))
+       ((:must-tail "LLVMTailCallKindMustTail"))
+       ((:no-tail "LLVMTailCallKindNoTail")))
+
 (cenum int-predicate
        ((:= "LLVMIntEQ"))
        ((:/= "LLVMIntNE"))
